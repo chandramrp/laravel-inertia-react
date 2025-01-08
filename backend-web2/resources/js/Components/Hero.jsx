@@ -1,26 +1,36 @@
+import React from "react";
+
 export default function Hero() {
     return (
-        <div className="relative h-[80vh] w-full">
+        <div className="relative h-[80vh] overflow-hidden">
+            {/* Background Image */}
             <div className="absolute inset-0">
                 <img
-                    src="/images/hero-bg.jpg"
-                    alt="Hero background"
+                    src="/images/hero-bg.png"
+                    alt="Hero Background"
                     className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-primary/80 to-transparent" />
+                {/* Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/80 to-transparent" />
             </div>
 
-            <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
-                <div className="flex flex-col justify-center h-full max-w-2xl">
-                    <h1 className="text-4xl sm:text-6xl font-bold text-white mb-4">
-                        Unlimited movies, TV shows, and more
+            {/* Content */}
+            <div className="relative h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="flex flex-col justify-center h-full pt-20">
+                    <h1 className="text-4xl md:text-6xl font-bold text-white max-w-2xl animate-fade-in">
+                        Streaming Film & Serial TV Terbaik
                     </h1>
-                    <p className="text-xl text-gray-200 mb-8">
-                        Watch anywhere. Cancel anytime.
+                    <p className="mt-4 text-xl text-gray-300 max-w-xl animate-fade-in-up">
+                        Nikmati ribuan film dan serial TV premium kapanpun dan
+                        dimanapun
                     </p>
-                    <div className="flex space-x-4">
-                        <button className="btn-primary">Start Watching</button>
-                        <button className="btn-secondary">Learn More</button>
+                    <div className="mt-8 flex space-x-4 animate-fade-in-up">
+                        <button className="px-8 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                            Mulai Nonton
+                        </button>
+                        <button className="px-8 py-3 bg-gray-800/80 text-white rounded-lg hover:bg-gray-700/80 transition-colors">
+                            Pelajari Lebih Lanjut
+                        </button>
                     </div>
                 </div>
             </div>

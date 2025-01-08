@@ -2,48 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-    body {
-        @apply antialiased text-gray-800 dark:text-gray-200;
-    }
+:root {
+    color-scheme: dark;
 }
 
-@layer components {
-    .btn-primary {
-        @apply px-6 py-3 bg-secondary hover:bg-secondary-dark text-white 
-        font-semibold rounded-lg transition-colors duration-200 transform 
-        hover:scale-105;
-    }
-
-    .btn-secondary {
-        @apply px-6 py-3 bg-white/20 hover:bg-white/30 text-white 
-        font-semibold rounded-lg transition-colors duration-200 backdrop-blur-sm;
-    }
-
-    .card {
-        @apply bg-white dark:bg-slate-800 rounded-lg shadow-lg overflow-hidden;
-    }
-
-    .section-title {
-        @apply text-2xl font-bold text-white mb-6;
-    }
+body {
+    @apply bg-gray-900 text-white;
 }
 
-/* Custom Scrollbar */
+/* Scrollbar styling */
 ::-webkit-scrollbar {
     width: 8px;
     height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-    @apply bg-slate-800;
+    @apply bg-gray-800;
 }
 
 ::-webkit-scrollbar-thumb {
-    @apply bg-sky-400 rounded-full;
+    @apply bg-gray-600 rounded-full;
 }
 
-/* Animations */
+::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-500;
+}
+
+/* Custom animations */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -54,5 +39,5 @@
 }
 
 .animate-fadeIn {
-    animation: fadeIn 0.5s ease-in-out;
+    animation: fadeIn 0.3s ease-in-out;
 }
