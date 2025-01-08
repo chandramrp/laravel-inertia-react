@@ -1,0 +1,125 @@
+WEBSITE STREAMING FILM - DAFTAR FITUR
+
+A. AUTENTIKASI & MANAJEMEN USER
+1. Register
+   - Registrasi user baru
+   - Verifikasi email
+   - Pemilihan paket berlangganan
+
+2. Login
+   - Login dengan email/password
+   - Login dengan social media
+   - Forgot password
+   - Remember me
+
+3. Manajemen Profil
+   - Edit profil user
+   - Ganti password
+   - Manajemen berlangganan
+   - Riwayat tontonan
+   - Watchlist
+
+B. KATALOG FILM
+1. Browse Film
+   - List film terbaru
+   - Kategori film
+   - Genre film
+   - Rating umur
+   - Tahun rilis
+   - Negara
+
+2. Detail Film
+   - Informasi film (judul, sinopsis, durasi, dll)
+   - Rating & review
+   - Cast & crew
+   - Film terkait
+   - Trailer
+   - Download subtitle
+
+3. Pencarian
+   - Search by judul
+   - Filter advanced
+   - Autocomplete
+   - Search history
+
+C. STREAMING
+1. Video Player
+   - Custom video player
+   - Kualitas video (360p, 480p, 720p, 1080p)
+   - Subtitle support
+   - Picture in picture
+   - Speed control
+   - Auto-next episode
+
+2. Continue Watching
+   - Simpan progress tontonan
+   - Resume dari terakhir ditonton
+   - Mark as watched
+
+D. SISTEM BERLANGGANAN
+1. Paket Berlangganan
+   - Free tier
+   - Basic plan
+   - Premium plan
+   - Family plan
+
+2. Pembayaran
+   - Payment gateway integration
+   - Recurring payment
+   - Invoice
+   - Refund system
+
+E. ADMIN PANEL
+1. Manajemen Konten
+   - CRUD film & series
+   - Upload video
+   - Manage kategori
+   - Manage subtitle
+   - Content moderation
+
+2. Manajemen User
+   - List semua user
+   - User roles & permissions
+   - Ban/unban user
+   - Reset password
+
+3. Analitik
+   - User statistics
+   - Viewing statistics
+   - Revenue reports
+   - Popular content
+
+F. FITUR TAMBAHAN
+1. Social Features
+   - Rating & review
+   - Share ke social media
+   - Watchlist
+   - Like/dislike
+
+2. Notifikasi
+   - Email notifications
+   - Push notifications
+   - Film baru
+   - Series update
+
+3. Multi-bahasa
+   - Interface multi bahasa
+   - Subtitle multi bahasa
+   - Regional content
+
+4. Mobile Responsive
+   - Responsive design
+   - PWA support
+   - Mobile-friendly player
+
+URUTAN PENGEMBANGAN:
+1. Setup project & database
+2. Autentikasi dasar
+3. Manajemen film (admin)
+4. Katalog film
+5. Video player & streaming
+6. Sistem berlangganan
+7. Fitur user (watchlist, progress)
+8. Notifikasi
+9. Social features
+10. Analytics & reporting 
