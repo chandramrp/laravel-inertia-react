@@ -172,6 +172,10 @@ export default function Login() {
                                 <Link
                                     href="/auth/google"
                                     className="w-full inline-flex justify-center items-center px-4 py-2.5 border border-gray-600 rounded-lg shadow-sm bg-gray-700 text-sm font-medium text-gray-200 hover:bg-gray-600 transition duration-200"
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        window.location.href = "/auth/google";
+                                    }}
                                 >
                                     <svg
                                         className="w-5 h-5 mr-2"

@@ -27,5 +27,7 @@ Route::post('logout', [LoginController::class, 'destroy'])
 Route::get('/search', [MovieController::class, 'search'])->name('search');
 
 // Google Auth routes
-Route::get('auth/google', [GoogleController::class, 'redirect'])->name('google.login');
-Route::get('auth/google/callback', [GoogleController::class, 'callback'])->name('google.callback');
+Route::controller(GoogleController::class)->group(function () {
+    Route::get('auth/google', 'redirect')->name('google.login');
+    Route::get('auth/google/callback', 'callback')->name('google.callback');
+});
