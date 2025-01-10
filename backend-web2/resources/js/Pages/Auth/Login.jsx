@@ -11,7 +11,16 @@ export default function Login() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        post("/login");
+        post("/login", {
+            onSuccess: () => {
+                // Redirect akan ditangani oleh server
+                console.log("Login berhasil");
+            },
+            onError: (errors) => {
+                console.error("Login gagal:", errors);
+            },
+            preserveScroll: true,
+        });
     };
 
     return (

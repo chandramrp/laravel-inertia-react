@@ -12,7 +12,7 @@ export default function FeaturedMovies() {
                     movie={{
                         title: "Sample Movie",
                         year: "2024",
-                        poster: "/sample-poster.jpg",
+                        poster: "/images/sample-poster.png",
                     }}
                 />
             </div>

@@ -14,11 +14,11 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'avatar',
         'google_id',
+        'avatar',
         'role',
         'status',
-        'email_verified_at',
+        'email_verified_at'
     ];
 
     protected $hidden = [
@@ -28,12 +28,8 @@ class User extends Authenticatable
 
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'password' => 'hashed',
     ];
-
-    public function subscription()
-    {
-        return $this->hasOne(Subscription::class);
-    }
 
     public function watchlist()
     {

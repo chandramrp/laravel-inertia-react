@@ -1,5 +1,5 @@
 import React from "react";
-import { Head, Link, useForm } from "@inertiajs/react";
+import { Head, useForm, Link } from "@inertiajs/react";
 import MainLayout from "../../Layouts/MainLayout";
 
 export default function Register() {
@@ -12,13 +12,21 @@ export default function Register() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        post("/register");
+        post("/register", {
+            onSuccess: () => {
+                // Redirect akan ditangani oleh server
+                console.log("Registrasi berhasil");
+            },
+            onError: (errors) => {
+                console.error("Registrasi gagal:", errors);
+            },
+            preserveScroll: true,
+        });
     };
 
     return (
         <MainLayout>
             <Head title="Register" />
-
             <div className="min-h-screen flex items-center justify-center bg-gray-900 py-12 px-4 sm:px-6 lg:px-8">
                 <div className="max-w-md w-full space-y-8 bg-gray-800 p-8 rounded-2xl shadow-2xl">
                     <div>
