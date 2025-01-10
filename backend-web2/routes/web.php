@@ -8,17 +8,17 @@ use App\Http\Controllers\MovieController;
 use App\Http\Controllers\Auth\GoogleController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\HomeController;
 
-Route::get('/', function () {
-    return Inertia::render('Home');
-});
+// Public routes
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 // Guest routes
 Route::middleware('guest')->group(function () {
     Route::get('login', [AuthController::class, 'showLoginForm'])->name('login');
-    Route::post('login', [AuthController::class, 'login'])->name('login.post');
+    Route::post('login', [AuthController::class, 'login']);
     Route::get('register', [AuthController::class, 'showRegisterForm'])->name('register');
-    Route::post('register', [AuthController::class, 'register'])->name('register.post');
+    Route::post('register', [AuthController::class, 'register']);
 
     // Google routes
     Route::get('auth/google', [GoogleController::class, 'redirect'])->name('google.login');
@@ -32,5 +32,5 @@ Route::middleware('auth')->group(function () {
 });
 
 // Search route
-Route::get('/search', [MovieController::class, 'search'])->name('search');
+// Route::get('/search', [MovieController::class, 'search'])->name('search');
 

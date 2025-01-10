@@ -9,26 +9,20 @@ use Laravel\Socialite\Facades\Socialite;
 use Exception;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\DB;
 
 class GoogleController extends Controller
 {
     public function redirect()
     {
-        try {
-            return Socialite::driver('google')
-                ->scopes(['openid', 'profile', 'email'])
-                ->redirect();
-        } catch (Exception $e) {
-            Log::error('Google OAuth Redirect Error: ' . $e->getMessage());
-            return redirect('/login')->withErrors([
-                'email' => 'Terjadi kesalahan saat menghubungkan ke Google.'
-            ]);
-        }
+        return Socialite::driver('google')->redirect();
     }
 
     public function callback()
     {
         try {
+            DB::beginTransaction();
+
             $googleUser = Socialite::driver('google')->user();
 
             $user = User::updateOrCreate(
@@ -44,18 +38,22 @@ class GoogleController extends Controller
                 ]
             );
 
+            DB::commit();
+
             Auth::login($user);
             session()->regenerate();
 
-            return redirect('/dashboard');
+            return redirect()->intended('/dashboard')->with('success', 'Selamat datang!');
 
         } catch (Exception $e) {
+            DB::rollBack();
+
             Log::error('Google OAuth Error:', [
                 'message' => $e->getMessage(),
                 'trace' => $e->getTraceAsString()
             ]);
 
-            return redirect('/login')->withErrors([
+            return redirect()->route('login')->withErrors([
                 'email' => 'Gagal login dengan Google. Silakan coba lagi.'
             ]);
         }
